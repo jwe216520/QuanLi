@@ -7,74 +7,110 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-2LNS34R9YE');
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全利工程企業有限公司（全利企業社） | 專業建築廢棄物清運</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>全利工程企業有限公司（全利企業社） | 專業建築廢棄物清運</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- ⭐ TRACKING SYSTEM -->
+<script>
+  const TRACK_API = "https://falling-lab-33de.jwe216520.workers.dev/";
+
+  function track(eventName) {
+    fetch(TRACK_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        event: eventName,
+        page: window.location.pathname
+      })
+    }).catch(err => console.log("track error", err));
+  }
+</script>
+
 </head>
+
 <body>
 
-    <nav id="navbar">
-        <img src="logo.png" alt="全利工程企業有限公司" class="logo-img" id="logo-link">
-        <ul>
-            <li><a href="#about">關於我們</a></li>
-            <li><a href="#services">核心服務</a></li>
-            <li><a href="#contact">聯絡我們</a></li>
-        </ul>
-    </nav>
+<nav id="navbar">
+    <img src="logo.png" alt="全利工程企業有限公司"
+         class="logo-img"
+         id="logo-link"
+         onclick="track('click_logo')">
 
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <h1>誠信、專業、品質至上</h1>
-            <p>全利工程致力於提供最卓越的工程與廢棄物清運解決方案。</p>
-            <button id="cta-button">查看我們的服務</button>
+    <ul>
+        <li><a href="#about" onclick="track('nav_about')">關於我們</a></li>
+        <li><a href="#services" onclick="track('nav_services')">核心服務</a></li>
+        <li><a href="#contact" onclick="track('nav_contact')">聯絡我們</a></li>
+    </ul>
+</nav>
+
+<header id="home" class="hero">
+    <div class="hero-content">
+        <h1>誠信、專業、品質至上</h1>
+        <p>全利工程致力於提供最卓越的工程與廢棄物清運解決方案。</p>
+
+        <button id="cta-button"
+                onclick="track('cta_view_services')">
+            查看我們的服務
+        </button>
+    </div>
+</header>
+
+<section id="about" class="section">
+    <h2>關於我們</h2>
+    <p>全利工程企業有限公司擁有多年的實務經驗，我們在基礎建設、土木工程與專業建築廢棄物清運領域深耕。</p>
+</section>
+
+<section id="services" class="section bg-light">
+    <h2>核心服務</h2>
+
+    <div class="services-grid">
+
+        <div class="service-card" onclick="track('service_civil')">
+            <h3>土木工程</h3>
+            <p>承接各類基礎設施建設，確保結構安全與耐用性。</p>
         </div>
-    </header>
 
-    <section id="about" class="section">
-        <h2>關於我們</h2>
-        <p>全利工程企業有限公司擁有多年的實務經驗，我們在基礎建設、土木工程與專業建築廢棄物清運領域深耕。</p>
-    </section>
-
-    <section id="services" class="section bg-light">
-        <h2>核心服務</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>土木工程</h3>
-                <p>承接各類基礎設施建設，確保結構安全與耐用性。</p>
-            </div>
-            <div class="service-card">
-                <h3>建築廢棄物清運</h3>
-                <p>提供合法、專業、高效的廢棄物清運服務。</p>
-            </div>
-            <div class="service-card">
-                <h3>專案管理</h3>
-                <p>精準控制工程與清運進度及預算。</p>
-            </div>
+        <div class="service-card" onclick="track('service_waste')">
+            <h3>建築廢棄物清運</h3>
+            <p>提供合法、專業、高效的廢棄物清運服務。</p>
         </div>
-    </section>
 
-    <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-left">
-                <img src="logo2.png" alt="全利工程 Logo" class="footer-logo">
-            </div>
-            <div class="footer-right">
-                <p>地址：600嘉義市東區軍輝路489號</p>
-                <p>總機：05-2390493</p>
-                <p>傳真：05-2390493</p>
-                <p>聯絡電話：0937358920</p>
-            </div>
+        <div class="service-card" onclick="track('service_project')">
+            <h3>專案管理</h3>
+            <p>精準控制工程與清運進度及預算。</p>
         </div>
-        <div class="footer-bottom">
-            <p>版權所有 &copy; 2026 全利企業社. All rights reserved.</p>
-            <p>全利工程企業有限公司 統一編號：20181818、90352027</p> 
-        </div>
-    </footer>
 
-    <script src="script.js"></script>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="footer-container">
+        <div class="footer-left">
+            <img src="logo2.png" alt="全利工程 Logo" class="footer-logo">
+        </div>
+
+        <div class="footer-right">
+            <p onclick="track('contact_view')">地址：600嘉義市東區軍輝路489號</p>
+            <p onclick="track('contact_view')">總機：05-2390493</p>
+            <p onclick="track('contact_view')">傳真：05-2390493</p>
+            <p onclick="track('contact_view')">聯絡電話：0937358920</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>版權所有 &copy; 2026 全利企業社. All rights reserved.</p>
+        <p>全利工程企業有限公司 統一編號：20181818、90352027</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
